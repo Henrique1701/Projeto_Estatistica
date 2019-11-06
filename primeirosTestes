@@ -1,0 +1,17 @@
+install.packages("modes")
+caminho <- file.path("E:", "Users", "jhfs", "Documents", "detalhes.csv")
+
+#(1)
+dados <- read.csv("E:\\Users\\jhfs\\Documents\\detalhes.csv")
+dfDetalhes <- data.frame(dados)
+dfDetalhes
+
+#(2)
+#Media
+mean(dfDetalhes $Qnt..de.Ã.lbuns.Vendidos)
+#Desvio padrao
+sd(dfDetalhes $Qnt..de.Ã.lbuns.Vendidos)
+#Moda
+#modes(dfDetalhes $Qnt..de.Ã.lbuns.Vendidos)
+
+#(2)
