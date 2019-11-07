@@ -37,3 +37,6 @@ O projeto consiste em elaborar um script que responda todas as questões pedidas
 8. Elabore uma função que retorna os 3 artistas que mais aparecem na planilha, para em seguida fazer um dataframe desses artistas com as colunas ARTISTA, TOTAL DE VENDAS onde a última coluna deve ser a soma de todas as vendas do artista. Faça por ordem decrescente de vendas.
 9. Elabore uma função que retorna o nome do álbum que mais vendeu de cada empresa. Por fim, faça um dataframe com as colunas EMPRESA, ARTISTA, ÁLBUM, VENDAS que mostra o álbum mais vendido de cada empresa, por ordem decrescente de vendas.
 10. Faça uma função que ao receber o nome de uma empresa, cria um histograma onde mostra a frequência de álbuns lançados pela empresa de acordo com o ano. Não esqueça de dar um título e fazer ele de forma colorida, facilitando a visualização.
+
+
+https://docs.google.com/document/d/1obgDGxdIb1FRCbl93WqOQM6XVBW2iUCLYoCx5fDwaTc/edit?fbclid=IwAR3RUcVcpsaPrd5YuUEr9ZV3RSrnD7k2Q_iAN_a8SA--ZhK-RvkjdxuWb7w
