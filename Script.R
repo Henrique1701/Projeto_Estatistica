@@ -1,5 +1,5 @@
 install.packages("modes")
-caminho <- file.path("C:", "Users", "jhfs", "Documents", "detalhes.csv")
+caminho <- file.path("E:", "Users", "jhfs", "Documents", "detalhes.csv")
 
 #(1)
 dados <- read.csv(caminho)
@@ -16,7 +16,10 @@ print(desvio)
 #Moda
 quantVezes = 0;
 moda = 0;
+t <- table(dfDetalhes$Qnt..de.Albuns.Vendidos[1])
+t(1)
 for(i in 1:41){
+  print(table(dfDetalhes$Qnt..de.Albuns.Vendidos[i]))
   if(table(dfDetalhes$Qnt..de.Albuns.Vendidos[i]) > quantVezes){
     quantVezes <- table(dfDetalhes$Qnt..de.Albuns.Vendidos[i])
     moda <- dfDetalhes$Qnt..de.Albuns.Vendidos[i]
@@ -39,17 +42,37 @@ for(i in 1:length(artistas18)){
 }
 
 #(4)
-match("TWICE", dfDetalhes$Artista)
-dfDetalhes$Artista  %in% "TWICE"
-match(dfDetalhes$Artista  %in% "TWICE", TRUE)
-match(dfDetalhes$Artista, "TWICE")
-print(dfDetalhes$Artista)
-sd(dfDetalhes$Qnt..de.Albuns.Vendidos)
-for(i in 1:41){
+menorSD = 0
+artistaAux = ""
+vetorAux = NULL
+primeiroAux = 1
+vetorArtistas <- unique(dfDetalhes$Artista)
+for(i in 1:length(vetorArtistas)){
+  pos = 1
   for(j in 1:41){
-    
+    if(vetorArtistas[i] == dfDetalhes$Artista[j]){
+      vetorAux[pos] <- c(dfDetalhes$Qnt..de.Albuns.Vendidos[j])
+      pos = pos+1
+    }
   }
+  print(vetorAux)
+  #print(length(vetorAux))
+  
+  if(length(vetorAux) > 1){
+    #print(vetorArtistas[i])
+    #print(sd(vetorAux))
+    if(primeiroAux == 1){
+      primeiroAux = 0
+      menorSD <- sd(vetorAux)
+      artistaAux <- dfDetalhes$Artista[i]
+    } else if (sd(vetorAux) < menorSD){
+      menorSD <- sd(vetorAux)
+      artistaAux <- dfDetalhes$Artista[i]
+    }
+  }
+  vetorAux = NULL
 }
+print(artistaAux)
 
 #Testes:
 help("data.frame")
